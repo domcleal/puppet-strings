@@ -103,6 +103,7 @@ class YARD::Server::Commands::DisplayObjectCommand
   private
   alias_method :object_path_yard, :object_path
   def object_path
-    object_path_yard.gsub('_3A', ':')
+    orig = object_path_yard
+    orig.is_a?(String) ? orig.gsub('_3A', ':') : orig
   end
 end
